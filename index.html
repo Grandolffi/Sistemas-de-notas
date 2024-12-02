@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>🎓 Sistema de Notas</title>
+</head>
+<body>
+    <h1>🎓 Sistema de Notas</h1>
+    <h3>Calcule médias e verifique aprovações</h3>
+
+    <!-- Formulário -->
+    <form id="formulario">
+        <div class="campo">
+            <label for="nome">Nome do Aluno:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" required>
+        </div>
+
+        <div class="campo">
+            <label for="disciplina">Disciplina:</label>
+            <select id="disciplina" name="disciplina" required>
+                <option value="" disabled selected>Selecione a disciplina</option>
+                <option value="Matemática">Matemática</option>
+                <option value="Português">Português</option>
+                <option value="Ciências">Ciências</option>
+                <option value="História">História</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label>Notas</label>
+            <label for="nota1">1º Bimestre:</label>
+            <input type="number" id="nota1" name="nota1" step="0.1" placeholder="0.0" required max="10">
+            <label for="nota2">2º Bimestre:</label>
+            <input type="number" id="nota2" name="nota2" step="0.1" placeholder="0.0" required max="10">
+            <label for="nota3">3º Bimestre:</label>
+            <input type="number" id="nota3" name="nota3" step="0.1" placeholder="0.0" required max="10">
+            <label for="nota4">4º Bimestre:</label>
+            <input type="number" id="nota4" name="nota4" step="0.1" placeholder="0.0" required max="10">
+
+        </div>
+
+        <div class="botoes">
+            <button type="button" id="limpar">🧹 Limpar</button>
+            <button type="submit" id="calcular">📋 Calcular Média</button>
+        </div>
+
+        <!-- Botão de Histórico -->
+        <button type="button" id="toggleHistorico">Mostrar Histórico</button>
+        
+        <!-- Div para o Histórico (inicialmente oculta) -->
+        <div id="historico" style="display: none;">
+            <h3>⏳ Histórico de Cálculos</h3>
+            <ul id="listaHistorico"></ul>
+        </div>
+        
+    </form>
+
+    <!-- Div para exibir os resultados -->
+    <div id="calculo"></div>
+
+    <div id="modalResultado" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="calculoModal"></div> <!-- Alterado aqui -->
+        </div>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
